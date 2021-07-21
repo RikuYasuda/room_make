@@ -10,9 +10,15 @@
       </ul>
     </div>
   <% end %>
+  <h4>タイトル</h4>
   <div>
     <%= form.text_field :title %>
   </div>
+  <h4>画像</h4>
+  <div>
+    <%= form.attachment_field :image %>
+  </div>
+  <h4>説明</h4>
   <div>
     <%= form.text_area :body %>
   </div>

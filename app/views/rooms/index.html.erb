@@ -12,8 +12,9 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= @room.title %></td>
-        <td><%= @room.body %></td>
+        <td><%= room.title %></td>
+        <td><%= attachment_image_tag room, :image,　fallback: "no-image.png", style: "height: 100px; width:150px;" %></td>
+        <td><%= room.body %></td>
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,5 +24,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Room', new_room_path %>
