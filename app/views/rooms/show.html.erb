@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 <%= @room.title %>
 <%= attachment_image_tag @room, :image,　fallback: "no-image.png", style: "height: 250px; width:300px;" %>
-
 <%= @room.body %>
 <%= @room.user.name %>
+
+いいね件数: <%= @room.likes.count %>
+<%= render 'likes/like', room:@room %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
