@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.title %></td>
+        <td><%= link_to room do %>
+        <%= attachment_image_tag room, :image,　fallback: "no-image.png", style: "height: 100px; width:150px;" %></td>
+        <% end %>
+        <td><%= room.body %></td>
+        <td>❤︎ <%= room.liked_users.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
