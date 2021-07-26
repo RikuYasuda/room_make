@@ -7,5 +7,11 @@
 いいね件数: <%= @room.likes.count %>
 <%= render 'likes/like', room:@room %>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<% if @room.user == current_user %>
+<%= link_to 'Edit', edit_room_path(@room), class: 'btn btn-sm btn-success' %> |
+<% end %>
+
+<% if @room.user == current_user %>
+<%= link_to "Destroy", room_path(@room), class: 'btn btn-sm btn-danger', method: :delete, "data-confirm" => "Are you sure?" %>
+<% end %>
+
