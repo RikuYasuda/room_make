@@ -1,3 +1,4 @@
+
 <body>
   <main>
       <% if flash[:notice] %>
@@ -30,6 +31,7 @@
                       <% end %>
                     <td>
                       <%= link_to room.title , room_path(room.id) %>
+
                     </td>
                     <td>
                       <%= room.body %>
@@ -44,3 +46,4 @@
   </main>
   <footer></footer>
 </body>
+
