@@ -12,13 +12,12 @@
           <%= render 'layouts/list', user: @user %>
         </div>
         <div class="col-md-8 offset-md-1">
-          <h2>Rooms</h2>
+          <h2>My Rooms</h2>
           <table class='table table-hover table-inverse'>
             <thead>
               <tr>
                 <th></th>
                 <th>Title</th>
-                <th>Opinion</th>
                 <th colspan="3"></th>
               </tr>
             </thead>
@@ -27,14 +26,11 @@
                   <tr>
                     <td>
                       <%= link_to user_path(room.user_id) do %>
-                      <%= attachment_image_tag room, :image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+                      <%= attachment_image_tag room, :image, fallback: "no_image.jpg", style: "height: 100px; width:150px;" %>
                       <% end %>
                     <td>
                       <%= link_to room.title , room_path(room.id) %>
 
-                    </td>
-                    <td>
-                      <%= room.body %>
                     </td>
                   </tr>
               <% end %>
