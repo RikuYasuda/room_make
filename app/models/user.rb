@@ -9,4 +9,5 @@ class User < ApplicationRecord
   def already_liked?(room)
     self.likes.exists?(room_id: room.id)
   end
+  attachment :profile_image
 end
