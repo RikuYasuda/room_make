@@ -28,6 +28,10 @@ class RoomsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    tags = Vision.get_image_data(@room.image)
+    tags.each do |tag|
+      @room.tags.create(name: tag)
+    end
   end
 
   def update
