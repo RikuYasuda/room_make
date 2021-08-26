@@ -25,6 +25,12 @@
                   <tr>
                     <td>
                       <%= attachment_image_tag @room, :image,　fallback: "no-image.png", style: "height: 350px; width:350px;" %>
+                    </td>
+                    <div class="tag-box">
+                    <% @room.tags.each do |tag| %>
+                    <span class="label"><%= tag.name %></span>
+                    <% end %>
+                    </div>
                     <td>
                       <%= @room.body %>
                     </td>
