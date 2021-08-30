@@ -1,10 +1,11 @@
 <% if current_user.already_liked?(room) %>
   <%= link_to room_likes_path(room.id), method: :delete, remote: true do %>
-<span style="color:red">❤️</span
-<%= room.likes.count %>
+<span style="color:red">❤️</span>
 <% end %>
+<%= @room.liked_users.count %>
 <% else %>
 <%= link_to room_likes_path(room.id) , method: :post, remote: true do %>
 🤍
+<%= room.liked_users.count %>
 <% end %>
 <% end %>
