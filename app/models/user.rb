@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_rooms, through: :likes, source: :room
   def already_liked?(room)
-    self.likes.exists?(room_id: room.id)
+    likes.exists?(room_id: room.id)
   end
   attachment :profile_image
 end

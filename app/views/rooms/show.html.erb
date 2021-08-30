@@ -35,7 +35,9 @@
                       <%= @room.body %>
                     </td>
                     <td>
-                      <%= render 'likes/like', room: @room %> <%= @room.liked_users.count %>
+                      <div id="like_buttons_<%= @room.id %>">
+                      <%= render 'likes/like', room: @room %>
+                      </div>
                     </td>
                     <td>
                     <% if @room.user == current_user %>
@@ -54,5 +56,4 @@
       </div>
     </div>
   </main>
-  <footer></footer>
 </body>
